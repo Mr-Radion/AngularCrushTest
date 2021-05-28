@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let todo of todos; let i = index">
+    <!-- через () мы указываем, что это обработка события и обращаемся к методу внутри класса -->
+    <input type="checkbox" [checked]="todo.completed" (change)="onChange(todo.id)">
+    <strong>{{i + 1}}</strong>
+    {{ todo.title }}
+    <small>{{todo.date | date:'medium'}}</small>
+    <button class="rm">&times;</button>
+  </li>
+</ul>
